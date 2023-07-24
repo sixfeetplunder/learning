@@ -1,0 +1,156 @@
+/*ideas: pc with a turn on button displaying my work (gifs?) 
+profile section with changing (fading?) text showing my prog from start*/
+
+/*index: || general, navbar, main*/
+
+/* || general */
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+:root {
+  --background-primary: #292a36;
+  --background-secondary: #3f4153;
+  --highlight1: #ff4545;
+  --highlight2: #ffa245;
+  --highlight3: #ff45a2;
+  --highlight4: #a2ff45;
+  --text-primary: #d2d8df;
+}
+
+html {
+  font-size: 10px;
+  color: var(--text-primary);
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-primary);
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--highlight1);
+}
+
+/* || navbar, only took 6 hours yep */
+
+.navbar {
+  height: 8rem;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: var(--background-secondary);
+  transition: height 200ms ease;
+}
+
+.nav-item {
+  height: 100%;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 2rem 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: calc(100%-5rem);
+}
+
+.nav-item:last-child {
+  margin-left: auto;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 8rem;
+  height: 12rem;
+  color: var(--text-primary);
+  gap: 3rem;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.link-text {
+  margin-top: 1.6rem;
+  display: none;
+}
+
+.nav-link i {
+  min-width: 2.7rem;
+  margin: 0;
+  padding: 4rem 0 0 0.3rem;
+  color: var(--text-primary);
+}
+
+.nav-link:hover {
+  background-color: var(--background-primary);
+}
+
+.nav-link:hover i {
+  color: var(--highlight4);
+  transform: scale(150%);
+}
+
+.nav-link i.fa-child {
+  padding-left: 1.4rem;
+}
+
+.nav-link i.fa-seedling {
+  padding-left: 0.5rem;
+}
+
+.nav-link i.fa-mobile {
+  padding-left: 1.1rem;
+}
+
+.navbar:hover {
+  height: 12rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.logo {
+  background: var(--highlight1);
+}
+
+.navbar-nav:hover i.fa-angles-down {
+  transform: rotate(180deg) scale(150%);
+  color: var(--highlight1);
+}
+
+.fa-angles-down {
+  transform-origin: bottom center;
+  transition: transform 0.5s linear;
+}
+
+.navbar-nav:hover .logo {
+  background-color: var(--background-primary);
+}
+
+/* || main */
+
+main {
+  margin-top: 12rem;
+  padding: 1.6rem;
+  font-size: 3rem;
+}
